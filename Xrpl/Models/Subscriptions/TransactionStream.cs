@@ -73,6 +73,6 @@ namespace Xrpl.Models.Subscriptions
         /// For details, see API Warnings (https://xrpl.org/response-formatting.html#api-warnings)
         /// </summary>
         [JsonProperty("warnings")]
-        public List<RippleResponseWarning> Warnings { get; set; }
+        public object Warnings { get; set; }
     }
 }

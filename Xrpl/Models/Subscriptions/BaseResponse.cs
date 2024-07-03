@@ -52,7 +52,7 @@ namespace Xrpl.Models.Subscriptions
         /// For details, see API Warnings (https://xrpl.org/response-formatting.html#api-warnings)
         /// </summary>
         [JsonProperty("warnings")]
-        public List<RippleResponseWarning> Warnings { get; set; }
+        public object Warnings { get; set; }
         /// <summary>
         /// (May be omitted) If true, this request and response have been forwarded from a Reporting Mode
         /// server to a P2P Mode server (and back) because the request requires data that is not available in Reporting Mode.<br/>
