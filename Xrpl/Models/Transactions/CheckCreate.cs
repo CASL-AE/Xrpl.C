@@ -1,7 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
+using Newtonsoft.Json;
+
 using Xrpl.Client.Exceptions;
+using Xrpl.Client.Json.Converters;
 using Xrpl.Models.Common;
 
 // https://github.com/XRPLF/xrpl.js/blob/main/packages/xrpl/src/models/transactions/checkCreate.ts
@@ -23,7 +27,7 @@ namespace Xrpl.Models.Transactions
         /// <inheritdoc />
         public uint? DestinationTag { get; set; }
         /// <inheritdoc />
-        public uint? Expiration { get; set; }
+        public DateTime? Expiration { get; set; }
         /// <inheritdoc />
         public uint? InvoiceID { get; set; }
     }
@@ -54,7 +58,8 @@ namespace Xrpl.Models.Transactions
         /// Time after which the Check is no longer valid, in seconds since the Ripple.<br/>
         /// Epoch.
         /// </summary>
-        uint? Expiration { get; set; }
+        [JsonConverter(typeof(RippleDateTimeConverter))]
+        DateTime? Expiration { get; set; }
         /// <summary>
         /// Arbitrary 256-bit hash representing a specific reason or identifier for.<br/>
         /// this Check.
@@ -72,7 +77,7 @@ namespace Xrpl.Models.Transactions
         /// <inheritdoc />
         public uint? DestinationTag { get; set; }
         /// <inheritdoc />
-        public uint? Expiration { get; set; }
+        public DateTime? Expiration { get; set; }
         /// <inheritdoc />
         public uint? InvoiceID { get; set; }
     }

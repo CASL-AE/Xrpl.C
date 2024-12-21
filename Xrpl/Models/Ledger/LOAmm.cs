@@ -115,7 +115,8 @@ namespace Xrpl.Models.Ledger
         /// The time when this slot expires, in seconds since the Ripple Epoch.
         /// </summary>
         [JsonProperty("expiration")]
-        public DateTime? Expiration { get; set; }
+        [JsonConverter(typeof(FromStringDateTimeConverter))]
+        public object? Expiration { get; set; }
         /// <summary>
         /// The amount the auction owner paid to win this slot, in LPTokens.
         /// </summary>

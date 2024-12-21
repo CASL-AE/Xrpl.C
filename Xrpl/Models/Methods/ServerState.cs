@@ -157,7 +157,7 @@ namespace Xrpl.Models.Methods
         /// Some circumstances may cause the server to require more   validations.
         /// </summary>
         [JsonProperty("validation_quorum")]
-        public int ValidationQuorum { get; set; }
+        public long ValidationQuorum { get; set; }
 
         /// <summary>
         /// Either the human readable time, in UTC, when the current validator list will expire,

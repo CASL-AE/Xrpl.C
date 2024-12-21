@@ -37,7 +37,7 @@ namespace Xrpl.Client.Json.Converters
                 "AccountDelete" => new AccountDeleteResponse(),
                 "CheckCancel" => new CheckCancelResponse(),
                 "CheckCash" => new CheckCashResponse(),
-                "CheckCreate" => new CheckCancelResponse(),
+                "CheckCreate" => new CheckCreateResponse(),
                 "DepositPreauth" => new DepositPreauthResponse(),
                 "EscrowCancel" => new EscrowCancelResponse(),
                 "EscrowCreate" => new EscrowCreateResponse(),

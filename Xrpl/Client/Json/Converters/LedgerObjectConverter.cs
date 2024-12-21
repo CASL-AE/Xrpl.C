@@ -40,7 +40,7 @@ namespace Xrpl.Client.Json.Converters
                 LedgerEntryType.AMM => JsonConvert.DeserializeObject<LOAmm>($"{field}"),
                 //LedgerEntryType.Check => expr,
                 //LedgerEntryType.DepositPreauth => expr,
-                _ => throw new ArgumentOutOfRangeException()
+                _ => new BaseLedgerEntry() //throw new ArgumentOutOfRangeException()
             };
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Xrpl.Client.Json.Converters
                 "Check" => new LOCheck(),
                 "DepositPreauth" => new LODepositPreauth(),
                 "Amm" => new LOAmm(),
-                _ => throw new Exception("Can't create ledger type" + ledgerEntryType)
+                _ => new BaseLedgerEntry()// throw new Exception("Can't create ledger type" + ledgerEntryType)
             };
         }
 
